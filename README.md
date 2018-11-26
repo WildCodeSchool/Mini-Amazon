@@ -13,7 +13,7 @@ CREATE TABLE articles (
  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
  name VARCHAR(255),
  date DATE,
- price INT,
+ price FLOAT,
  quantity INT
 )
 
