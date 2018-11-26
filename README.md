@@ -3,7 +3,7 @@ React / Redux / SQL
 
 Mini amazon is little project made in livecoding for *Wild Code School* by *Sphilouze*.
 
-install database
+Install database :
 ```
 CREATE DATABASE amazon
 
@@ -31,4 +31,10 @@ VALUES
 
 ```
 npm install && npm start
+```
+
+In another terminal prompt 
+
+```
+node api/index.js
 ```
