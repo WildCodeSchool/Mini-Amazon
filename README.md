@@ -1,7 +1,7 @@
 
 React / Redux / SQL
 
-Mini amazon is little project made in livecoding for Wild Code School by Sphilouze.
+Mini amazon is little project made in livecoding for *Wild Code School* by *Sphilouze*.
 
 install database
 ```
