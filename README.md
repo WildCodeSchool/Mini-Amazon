@@ -1,29 +1,8 @@
 
+React / Redux / SQL
 
-/**
- * ADD_PRODUCT_TO_CART
- * REMOVE_PRODUCT_FROM_CART
- * PREV_PAGINATION
- * NEXT_PAGINATION
- * SELECT_PAGINATION
- */
-
- /** articles
-  * ID : AI, PRIMARY_KEY
-  * NAME : VARCHAR(255)
-  * PRICE : INT
-  * QUANTITY: INT
-  * DATE: DATE
-  */
-
-  /**
-   * POST /articles/qty/2/0
-   * GET /articles/
-   * GET /articles/2 <- pagination
-   */
-
-
-/*
+install database
+```
 CREATE DATABASE amazon
 
 USE amazon
@@ -46,5 +25,8 @@ VALUES
 ('OnePlus 6 Smartphone débloqué 4G', NOW(), '459.00', '30'),
 ('VicTsing Diffuseur Huiles Essentielles 300ml Humidificateur d\'air ', NOW(), '18.16', '103'),
 ('Bâtons de réglisse Bio 100g - 12 bâtons minimum', NOW(), '9.99', '4059');
+```
 
- */
+```
+npm install && npm start
+```
