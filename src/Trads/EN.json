@@ -1,0 +1,18 @@
+{
+  "listArticles": "List items",
+  "cart": "Cart",
+  "totalPrice": "Total Price",
+  "remove": "Remove",
+  "checkout": "Checkout",
+  "name": "Name",
+  "price": "Price",
+  "quantity": "Quantity",
+  "addToCart": "Add To Cart",
+  "devise": "$",
+  "priceDetails": "Price details",
+  "ext": "EXT",
+  "taxes": "VAT",
+  "includedTaxes": "IT",
+  "cancel": "Cancel",
+  "pay": "Pay"
+}

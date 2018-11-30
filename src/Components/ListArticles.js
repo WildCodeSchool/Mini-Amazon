@@ -3,18 +3,39 @@ import { Col, Card, Table, Button, CardBody, CardFooter, CardTitle, Pagination, 
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { addCartAction } from '../Actions/CartActions';
+import { TRAD } from '../Utils/Utils';
 
 class ListArticles extends Component {
   constructor() {
     super();
     this.state = {
-      articles: []
+      articles: [],
+      nbrPages: 0
     }
 
-    axios.get('http://localhost:6999/articles')
+    this.getArticlesPerPage(0);
+
+    axios.get('http://localhost:6999/articles/pages')
+    .then((result) => {
+      this.setState({nbrPages: result.data[0].pages});
+    });
+  }
+
+  getArticlesPerPage = (page) => {
+    axios.get(`http://localhost:6999/articles/page/${page}`)
     .then((result) => {
       this.setState({articles: result.data})
     });
+  }
+
+  pagination() {
+    let pagination = [];
+
+    for(let i = 0; i < this.state.nbrPages; i++){
+      pagination = [...pagination, <PaginationItem key={i} onClick={() => {this.getArticlesPerPage(i)}}><PaginationLink href="#" >{i+1}</PaginationLink></PaginationItem>]
+    }
+
+    return pagination;
   }
 
   render() {
@@ -23,14 +44,14 @@ class ListArticles extends Component {
         <Card>
           <CardBody>
             <CardTitle>
-              <p className="lead">List Articles</p>
+              <p className="lead">{TRAD.listArticles}</p>
             </CardTitle>
             <Table striped>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
+                  <th>{TRAD.name}</th>
+                  <th>{TRAD.price}</th>
+                  <th>{TRAD.quantity}</th>
                   <th></th>
                 </tr>
               </thead>
@@ -39,10 +60,10 @@ class ListArticles extends Component {
                   return (
                     <tr key={index}>
                       <th scope="row" width="50%">{article.name}</th>
-                      <td width="20%">{article.price} $</td>
+                      <td width="20%">{article.price} {TRAD.devise}</td>
                       <td width="10%">{article.quantity}</td>
                       <td width="20%">
-                        <Button color="primary" size="sm" onClick={() => {this.props.addToCart({name: article.name, price: article.price, quantity: 1})}} className="float-right">Add To Cart</Button>
+                        <Button color="primary" size="sm" onClick={() => {this.props.addToCart({name: article.name, price: article.price, quantity: 1})}} className="float-right">{TRAD.addToCart}</Button>
                       </td>
                     </tr>
                   )
@@ -55,12 +76,7 @@ class ListArticles extends Component {
               <PaginationItem>
                 <PaginationLink previous href="#" />
               </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#" >1</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#" >2</PaginationLink>
-              </PaginationItem>
+              {this.pagination()}
               <PaginationItem>
                 <PaginationLink next href="#" />
               </PaginationItem>

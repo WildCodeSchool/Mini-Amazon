@@ -1,0 +1,18 @@
+{
+  "listArticles": "Liste d'articles",
+  "cart": "Panier",
+  "totalPrice": "Prix Total",
+  "remove": "Supprimer",
+  "checkout": "Validation de la commande",
+  "name": "Nom",
+  "price": "Prix",
+  "quantity": "Quantité",
+  "addToCart": "Ajouter",
+  "devise": "€",
+  "priceDetails": "Détails du prix",
+  "ext": "HT",
+  "taxes": "TVA (20%)",
+  "includedTaxes": "TTC",
+  "cancel": "Annuler",
+  "pay": "Payer"
+}

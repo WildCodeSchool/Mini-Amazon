@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const app = express();
 const port = 6999;
+const articlesPerPage = 7;
 
 // LOCAL DEV
 app.all('/*', function(req, res, next) {
@@ -27,8 +28,16 @@ connection.connect(function(err) {
   console.log("Server is connected on mysql");
 });
 
-app.get('/articles', function (req, res) {
-  connection.query("SELECT * FROM articles", function (err, result) {
+app.get('/articles/pages', function(req, res) {
+  connection.query(`SELECT COUNT(*)/${articlesPerPage} AS pages FROM articles`, function (err, result) {
+    if (err) throw err;
+    res.send(result);
+  });
+})
+
+app.get('/articles/page/:page', function(req, res) {
+  let offset = articlesPerPage*req.params.page;
+  connection.query(`SELECT * FROM articles LIMIT ${articlesPerPage} OFFSET ${offset}`, function (err, result) {
     if (err) throw err;
     res.send(result);
   });
@@ -37,5 +46,3 @@ app.get('/articles', function (req, res) {
 app.listen(port, function () {
   console.log('Server is up');
 })
-
-// localhost:6999/
