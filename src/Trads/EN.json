@@ -14,5 +14,17 @@
   "taxes": "VAT",
   "includedTaxes": "IT",
   "cancel": "Cancel",
-  "pay": "Pay"
+  "pay": "Pay",
+  "createAccount": "Create new account",
+  "login": "Login",
+  "logout": "Logout",
+  "createYourAccount" : "Create your account",
+  "password": "Password",
+  "email": "Email",
+  "genre1": "Mrs",
+  "genre2": "Mr",
+  "genre3": "Other",
+  "password2": "Confirm your password",
+  "surname": "Surname",
+  "address": "Address"
 }

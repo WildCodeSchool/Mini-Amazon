@@ -14,5 +14,17 @@
   "taxes": "TVA (20%)",
   "includedTaxes": "TTC",
   "cancel": "Annuler",
-  "pay": "Payer"
+  "pay": "Payer",
+  "createAccount": "Créer un compte",
+  "login": "Connexion",
+  "logout": "Déconnexion",
+  "createYourAccount" : "Créer votre compte",
+  "password": "Mot de passe",
+  "email": "Email",
+  "genre1": "Mme",
+  "genre2": "M.",
+  "genre3": "Autres",
+  "password2": "Confirmez votre mot de passe",
+  "surname": "Prénom",
+  "address": "Adresse"
 }
