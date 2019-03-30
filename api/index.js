@@ -22,8 +22,8 @@ app.all('/*', function(req, res, next) {
 
 let connection = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "9k13cv2",
+  user: "#",
+  password: "#",
   database: "amazon"
 });
 
